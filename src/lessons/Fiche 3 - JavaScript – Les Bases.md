@@ -35,13 +35,13 @@
 
 ### **📌 Où placer le JavaScript ?**
 
-1. **Dans le `<head>**` :
+1. **Dans le `<head>`** :
   - Le script est chargé **avant** que la page ne soit affichée → Peut bloquer le rendu.
   - Utiliser `defer` pour exécuter le script **après** le chargement du HTML.
     ```html
     <script src="script.js" defer></script>
     ```
-2. **À la fin du `<body>**` :
+2. **À la fin du `<body>`** :
   - Le script est chargé **après** le HTML → Pas de blocage du rendu.
 3. **Externe vs Inline** :
   - **Externe** (recommandé) : `<script src="script.js"></script>`
