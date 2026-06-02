@@ -67,7 +67,7 @@ document
 
 ## **🔹 2. Structure de Base d’un Document HTML**
 
-### **📌 `<!DOCTYPE html>**`
+### **📌 `<!DOCTYPE html>`**
 
 - **Rôle** : Indique au navigateur que le document est en **HTML5** (version actuelle).
 - **Pourquoi est-ce important ?** :
@@ -80,7 +80,7 @@ document
 
 ---
 
-### **📌 `<html>**`
+### **📌 `<html>`**
 
 - **Rôle** : Élément racine du document. **Toujours présent**.
 - **Attributs courants** :
@@ -91,7 +91,7 @@ document
 
 ---
 
-### **📌 `<head>**`
+### **📌 `<head>`**
 
 - **Rôle** : Contient des **métadonnées** (informations sur la page, non affichées).
 - **Éléments courants** :
@@ -130,7 +130,7 @@ document
 
 ---
 
-### **📌 `<body>**`
+### **📌 `<body>`**
 
 - **Rôle** : Contient **tout le contenu visible** de la page.
 - **Éléments courants** :
@@ -368,7 +368,7 @@ function direBonjour(nom) {
 
 ## **🔹 6. Images et Médias**
 
-### **📌 `<img>**`
+### **📌 `<img>`**
 
 - **Rôle** : Insérer une image.
 - **Attributs obligatoires** :
@@ -401,7 +401,7 @@ function direBonjour(nom) {
 
 ---
 
-### **📌 `<picture>**`
+### **📌 `<picture>`**
 
 - **Rôle** : Permet de **choisir entre plusieurs sources d’image** selon les conditions (ex : format WebP pour les navigateurs modernes, JPEG pour les autres).
 - **Exemple** :
@@ -415,7 +415,7 @@ function direBonjour(nom) {
 
 ---
 
-### **📌 `<video>` et `<audio>**`
+### **📌 `<video>` et `<audio>`**
 
 **Vidéos** :
 
@@ -445,7 +445,7 @@ function direBonjour(nom) {
 
 ---
 
-### **📌 `<iframe>**`
+### **📌 `<iframe>`**
 
 - **Rôle** : Intégrer une **page externe** (ex : vidéo YouTube, carte Google Maps).
 - **Exemple** :
@@ -540,7 +540,7 @@ function direBonjour(nom) {
 
 ---
 
-### **📌 `<input>**`
+### **📌 `<input>`**
 
 - **Rôle** : Champ de saisie.
 - **Attributs courants** :
@@ -596,7 +596,7 @@ function direBonjour(nom) {
 
 ---
 
-### **📌 `<textarea>**`
+### **📌 `<textarea>`**
 
 - **Rôle** : Zone de texte multi-lignes.
 - **Exemple** :
@@ -608,7 +608,7 @@ function direBonjour(nom) {
 
 ---
 
-### **📌 `<select>` et `<option>**`
+### **📌 `<select>` et `<option>`**
 
 - **Rôle** : Liste déroulante.
 - **Exemple** :
@@ -638,7 +638,7 @@ function direBonjour(nom) {
 
 ---
 
-### **📌 `<datalist>**`
+### **📌 `<datalist>`**
 
 - **Rôle** : Champ de saisie avec **suggestions**.
 - **Exemple** :
@@ -653,7 +653,7 @@ function direBonjour(nom) {
 
 ---
 
-### **📌 `<button>**`
+### **📌 `<button>`**
 
 - **Rôle** : Bouton cliquable.
 - **Attributs** :
@@ -668,7 +668,7 @@ function direBonjour(nom) {
 
 ---
 
-### **📌 `<fieldset>` et `<legend>**`
+### **📌 `<fieldset>` et `<legend>`**
 
 - **Rôle** : Regrouper des champs liés et ajouter une légende.
 - **Exemple** :
@@ -1087,151 +1087,10 @@ Cela mettra à jour le DOM, et le navigateur mettra à jour l’affichage en con
 6. **Utiliser des types d’`input` adaptés** (`email`, `date`, etc.) pour une validation native et une meilleure UX sur mobile."*
 
 ---
-
 ---
 
-## **🔹 13. Exercice Pratique (HTML)**
 
-**Consigne** : Crée une page HTML complète pour un **CV en ligne** avec :
-
-1. Un **en-tête** (`<header>`) avec ton nom, ton titre (ex : "Développeuse Front-End"), et un menu de navigation (`<nav>`) avec des liens vers les sections "À propos", "Projets", "Contact".
-2. Une section **"À propos"** (`<section>`) avec :
-  - Un **paragraphe** te décrivant.
-  - Une **liste** de tes compétences (HTML, CSS, JavaScript, React, etc.).
-  - Une **image** de toi (ou un placeholder) avec un `alt` descriptif.
-3. Une section **"Projets"** (`<section>`) avec :
-  - Un **tableau** listant 3 projets (Nom, Description, Technologies utilisées, Lien).
-  - Chaque ligne du tableau doit être cliquable (lien vers le projet).
-4. Une section **"Contact"** (`<section>`) avec :
-  - Un **formulaire** avec :
-    - Un champ "Nom" (obligatoire).
-    - Un champ "Email" (obligatoire, format email).
-    - Un champ "Message" (`<textarea>`).
-    - Un bouton "Envoyer".
-5. Un **pied de page** (`<footer>`) avec :
-  - Un lien vers ton LinkedIn.
-  - Un lien vers ton GitHub.
-  - Un copyright.
-
-**Solution** :
-
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CV en ligne d'Aurélie R., développeuse front-end à Paris.">
-  <title>Aurélie R. - Développeuse Front-End</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
-    header { background: #f4f4f4; padding: 20px; text-align: center; }
-    nav { margin: 20px 0; }
-    nav a { margin: 0 10px; text-decoration: none; color: #0066cc; }
-    section { padding: 20px; margin: 20px 0; border-bottom: 1px solid #eee; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { padding: 10px; text-align: left; border: 1px solid #ddd; }
-    th { background: #f4f4f4; }
-    form { max-width: 500px; margin: 20px auto; }
-    label { display: block; margin: 10px 0 5px; }
-    input, textarea { width: 100%; padding: 8px; margin-bottom: 10px; }
-    button { background: #0066cc; color: white; padding: 10px 20px; border: none; cursor: pointer; }
-    button:hover { background: #0055aa; }
-    footer { text-align: center; padding: 20px; background: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Aurélie R.</h1>
-    <p>Développeuse Front-End | Paris</p>
-    <nav>
-      <a href="#apropos">À propos</a>
-      <a href="#projets">Projets</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="apropos">
-      <h2>À propos</h2>
-      <p>Bonjour ! Je suis Aurélie, développeuse front-end passionnée par la création d'interfaces utilisateur intuitives et accessibles. J'ai un diplôme RNCP6 en conception et développement d'applications et je me spécialise dans HTML, CSS, JavaScript et React.</p>
-      <h3>Compétences</h3>
-      <ul>
-        <li>HTML5 & CSS3 (Flexbox, Grid, Animations)</li>
-        <li>JavaScript (ES6+)</li>
-        <li>React (Hooks, Context API)</li>
-        <li>TypeScript</li>
-        <li>Responsive Design & Accessibilité</li>
-        <li>Git & GitHub</li>
-      </ul>
-      <img src="photo.jpg" alt="Photo d'Aurélie R., développeuse front-end souriante" width="200" style="border-radius: 50%;">
-    </section>
-
-    <section id="projets">
-      <h2>Projets</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Description</th>
-            <th>Technologies</th>
-            <th>Lien</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><a href="https://projet1.com" target="_blank" rel="noopener noreferrer">Site de Recettes</a></td>
-            <td>Site pour consulter et filtrer des recettes de cuisine.</td>
-            <td>React, CSS Modules, Fetch API</td>
-            <td><a href="https://projet1.com" target="_blank" rel="noopener noreferrer">Voir</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://projet2.com" target="_blank" rel="noopener noreferrer">Portfolio</a></td>
-            <td>Mon portfolio personnel avec mes projets.</td>
-            <td>HTML, CSS, JavaScript</td>
-            <td><a href="https://projet2.com" target="_blank" rel="noopener noreferrer">Voir</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://projet3.com" target="_blank" rel="noopener noreferrer">Gestion de Tâches</a></td>
-            <td>Application pour gérer ses tâches quotidiennes.</td>
-            <td>React, TypeScript, LocalStorage</td>
-            <td><a href="https://projet3.com" target="_blank" rel="noopener noreferrer">Voir</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <form action="/envoyer" method="POST">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
-
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      <a href="https://linkedin.com/in/aurélie-r" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-      <a href="https://github.com/aurélie-r" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </p>
-    <p>&copy; 2026 Aurélie R. Tous droits réservés.</p>
-  </footer>
-</body>
-</html>
-```
-
----
-
-## **🔹 14. Ressources pour Aller Plus Loin**
+## **🔹 13. Ressources pour Aller Plus Loin**
 
 - **Documentation officielle** : [MDN HTML](https://developer.mozilla.org/fr/docs/Web/HTML)
 - **Validation HTML** : [W3C Validator](https://validator.w3.org/)

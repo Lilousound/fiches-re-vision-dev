@@ -433,7 +433,3 @@ Cette fiche regroupe **toutes les définitions essentielles** en JavaScript et R
 ✅ **Maîtriser les concepts avancés** (closures, hoisting, asynchrone, etc.).
 ✅ **Connaître React en profondeur** (hooks, state, routing, etc.).
 ✅ **Préparer un entretien technique** avec des définitions claires et concises.
-
-**Astuce** : Relis cette fiche régulièrement pour **renforcer ta mémoire** et **comprendre les liens entre les concepts** !
-
-Si tu veux approfondir un point en particulier, fais-le-moi savoir ! 😊
