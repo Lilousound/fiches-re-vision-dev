@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Mode sombre (défaut si pas d’attribut — évite flash avant hydratation) */
+:root,
+:root[data-theme='dark'] {
+  --color-app-bg: #06080f;
+  --color-app-surface: #0d111c;
+  --color-app-elevated: #121826;
+  --color-app-border: rgba(148, 163, 184, 0.12);
+  --app-text-primary: #e2e8f0;
+  --app-text-secondary: #cbd5e1;
+  --app-text-muted: #94a3b8;
+  --app-text-subtle: #64748b;
+  --app-shell-gradient: linear-gradient(165deg, #06080f 0%, #0a1018 45%, #0c1422 100%);
+  --app-aside-spot: radial-gradient(
+    ellipse 120% 80% at 0% 0%,
+    rgba(30, 58, 138, 0.22),
+    transparent 55%
+  );
+  --shadow-article: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+  --nav-item-hover-bg: rgba(30, 41, 59, 0.45);
+  --nav-item-active-border: rgba(59, 91, 180, 0.55);
+  --badge-inactive-bg: rgba(30, 41, 59, 0.9);
+  --badge-inactive-text: #94a3b8;
+  --badge-inactive-ring: rgba(71, 85, 105, 0.45);
+}
+
+:root[data-theme='light'] {
+  --color-app-bg: #f4f5f7;
+  --color-app-surface: #ffffff;
+  --color-app-elevated: #eceef2;
+  --color-app-border: rgba(15, 23, 42, 0.09);
+  --app-text-primary: #0f172a;
+  --app-text-secondary: #334155;
+  --app-text-muted: #64748b;
+  --app-text-subtle: #94a3b8;
+  --app-shell-gradient: linear-gradient(180deg, #fafbfc 0%, #f0f2f5 55%, #ebeff4 100%);
+  --app-aside-spot: radial-gradient(
+    ellipse 120% 80% at 0% 0%,
+    rgba(30, 58, 138, 0.09),
+    transparent 55%
+  );
+  --shadow-article: 0 4px 28px -6px rgba(15, 23, 42, 0.1);
+  --nav-item-hover-bg: rgba(241, 245, 249, 0.95);
+  --nav-item-active-border: rgba(30, 58, 138, 0.38);
+  --badge-inactive-bg: #f1f5f9;
+  --badge-inactive-text: #475569;
+  --badge-inactive-ring: rgba(148, 163, 184, 0.45);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  body {
+    @apply m-0 antialiased;
+    font-family: var(--font-sans);
+    background: var(--app-shell-gradient);
+    color: var(--app-text-primary);
+  }
+}
