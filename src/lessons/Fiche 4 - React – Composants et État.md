@@ -461,7 +461,7 @@ root.render(<App />);
 
 ### **📌 `useEffect` (Effets de Bord)**
 
-- **Définition** : Permet d’effectuer des **actions après le rendu** (appels API, abonnements, etc.).
+- **Définition** : Permet d’effectuer des **actions après le rendu** (appels API, abonnements, etc.). Permet de synchroniser un composant React avec un système extérieur.
 - Un **effet de bord** (ou side effect en anglais) est toute opération qui interagit avec l'extérieur du composant et qui ne doit pas être exécutée directement dans le rendu (c'est-à-dire dans le corps de la fonction du composant).
 ex: Appel Api, abonnement à un événement, manipulation du Dom, etc...
 Si on place un effet de bord directement dans le corps du composant, il sera exécuté à chaque rendu, et peut entraîner: boucles infinies, fuite mémoire, comportements inattendus.
@@ -603,7 +603,7 @@ useEffect(() => {
 
 ### **📌 `useRef` (Référence)**
 
-- **Définition** : Permet de **stocker une valeur mutable** qui ne déclenche pas de re-rendu.
+- **Définition** : Permet de **stocker une valeur mutable** qui ne déclenche pas de re-rendu. Permet de référencer une valeur qui n’est pas nécessaire au code du rendu lui-même.
 - **Cas d’usage** :
   1. **Accéder à un élément DOM** :
     ```jsx
