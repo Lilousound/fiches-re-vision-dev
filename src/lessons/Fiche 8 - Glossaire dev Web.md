@@ -20,17 +20,14 @@ Ce glossaire regroupe les termes essentiels du développement web, enrichi de d�
 ## 🔁 **Méthodologies & Organisation**
 
 - **Agile** : Méthodologie itérative et incrémentale pour la gestion de projet, axée sur la **collaboration**, la **flexibilité** et la **livraison fréquente** de fonctionnalités. Les principes sont définis dans le [Manifeste Agile](https://agilemanifesto.org/).
-  - *Valeurs clés* : Individus et interactions > processus et outils ; Logiciel fonctionnel > documentation exhaustive ; Collaboration client > négociation contractuelle ; Réactivité au changement > suivi d'un plan.
-
 Les 4 grands piliers de la méthode Agile (Manifeste Agile, 2001) :
-
-  1. Les individus et leurs interactions plutôt que processus et outils
-  2. Un logiciel fonctionnel plutôt que documentation exhaustive
-  3. La collaboration avec le client plutôt que négociation contractuelle
-  4. L’adaptation au changement plutôt que suivi d’un plan
+  - *Les individus et leurs interactions* plutôt que processus et outils
+  - *Un logiciel fonctionnel* plutôt que documentation exhaustive
+  - *La collaboration avec le client* plutôt que négociation contractuelle
+  - *L’adaptation au changement* plutôt que suivi d’un plan
 
 <br>
-<br>
+
 
 
 - **Scrum** : Framework Agile le plus utilisé, organisé en **sprints** (itérations de 1 à 4 semaines).
