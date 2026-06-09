@@ -604,6 +604,15 @@ useEffect(() => {
 ### **📌 `useRef` (Référence)**
 
 - **Définition** : Permet de **stocker une valeur mutable** qui ne déclenche pas de re-rendu. Permet de référencer une valeur qui n’est pas nécessaire au code du rendu lui-même.
+
+C'est comme une boîte pour garder un objet en mémoire.
+Une boîte où tu peux stocker une valeur (un élément du DOM, une variable, etc.) sans que React la surveille.
+Si tu changes ce qui est dans la boîte, React ne re-rend pas le composant.\
+À quoi ça sert ?\
+Accéder à un élément du DOM (comme un \<div>, \<canvas>, etc.).\
+Garder une valeur entre deux rendus (ex. : un compteur, un timer).
+
+
 - **Cas d’usage** :
   1. **Accéder à un élément DOM** :
     ```jsx
