@@ -466,6 +466,14 @@ root.render(<App />);
 ex: Appel Api, abonnement à un événement, manipulation du Dom, etc...
 Si on place un effet de bord directement dans le corps du composant, il sera exécuté à chaque rendu, et peut entraîner: boucles infinies, fuite mémoire, comportements inattendus.
 
+C'est un moyen de dire à React : "Fais ça après avoir affiché le composant, ou quand une valeur change."
+
+À quoi ça sert ?\
+Faire des actions après le rendu (ex. : lancer une animation, charger des données).\
+Nettoyer après soi (ex. : arrêter un timer, supprimer un écouteur d'événement).
+
+
+
 🔹 Définition Simple
 
 - **Syntaxe** :
