@@ -659,7 +659,7 @@ Garder une valeur entre deux rendus (ex. : un compteur, un timer).
 
 ### **📌 `useMemo` et `useCallback` (Optimisation)**
 
-1. `**useMemo**` :
+1. **`useMemo`** :
   - **Définition** : Mémorise une **valeur calculée** pour éviter de la recalculer à chaque rendu.
   - **Syntaxe** :
     ```jsx
@@ -670,7 +670,7 @@ Garder une valeur entre deux rendus (ex. : un compteur, un timer).
   - **Cas d’usage** :
     - Calculs coûteux.
     - Éviter des re-rendus inutiles.
-2. `**useCallback**` :
+2. **`useCallback`** :
   - **Définition** : Mémorise une **fonction** pour éviter sa recréation à chaque rendu.
   - **Syntaxe** :
     ```jsx
@@ -682,7 +682,7 @@ Garder une valeur entre deux rendus (ex. : un compteur, un timer).
     - Passer une fonction comme prop à un composant enfant (pour éviter des re-rendus inutiles).
     - Utiliser avec `useEffect` pour éviter des boucles infinies.
 
-**Exemple avec `useCallback**` :
+**Exemple avec `useCallback`** :
 
 ```jsx
 function Parent() {
@@ -717,7 +717,7 @@ function Enfant({ onClick }) {
 ### **📌 Hooks Personnalisés**
 
 - **Définition** : Créer ses **propres hooks** pour réutiliser de la logique entre composants.
-- **Exemple : Hook `useLocalStorage**` :
+- **Exemple : Hook `useLocalStorage`** :
   ```jsx
   import { useState, useEffect } from 'react';
 
@@ -1307,12 +1307,12 @@ function MonComposant() {
 
 ### **📌 Concepts de Base**
 
-1. `**BrowserRouter**` : Conteneur principal pour la navigation.
-2. `**Routes` et `Route**` : Définir les routes de l’application.
-3. `**Link**` : Lien de navigation (évite le rechargement de la page).
-4. `**NavLink**` : Lien de navigation avec style actif.
-5. `**useParams**` : Accéder aux paramètres de l’URL.
-6. `**useNavigate**` : Navigation programmatique.
+1. `BrowserRouter` : Conteneur principal pour la navigation.
+2. `Routes` et `Route` : Définir les routes de l’application.
+3. `Link` : Lien de navigation (évite le rechargement de la page).
+4. `NavLink` : Lien de navigation avec style actif.
+5. `useParams` : Accéder aux paramètres de l’URL.
+6. `useNavigate` : Navigation programmatique.
 
 ---
 
@@ -1414,7 +1414,7 @@ function APropos() {
 
 ### **📌 Outils d’Optimisation**
 
-1. `**React.memo**` :
+1. `React.memo` :
   - **Définition** : Évite le re-rendu d’un composant si ses props **n’ont pas changé**.
   - **Exemple** :
     ```jsx
@@ -1423,7 +1423,7 @@ function APropos() {
     });
     ```
   - **Limite** : Ne fonctionne que si les props sont **primitives** (string, number, boolean). Pour les objets/tableaux, utiliser `useMemo` ou `useCallback`.
-2. `**useMemo**` :
+2. `useMemo` :
   - **Définition** : Mémorise une **valeur calculée** pour éviter de la recalculer à chaque rendu.
   - **Exemple** :
     ```jsx
@@ -1431,7 +1431,7 @@ function APropos() {
       return computeExpensiveValue(a, b);
     }, [a, b]); // Recalculé seulement si `a` ou `b` change
     ```
-3. `**useCallback**` :
+3. `useCallback` :
   - **Définition** : Mémorise une **fonction** pour éviter sa recréation à chaque rendu.
   - **Exemple** :
     ```jsx
@@ -1470,7 +1470,7 @@ function APropos() {
   - [react-window](https://react-window.vercel.app/)
   - [react-virtualized](https://bvaughn.github.io/react-virtualized/)
 
-**Exemple avec `react-window**` :
+Exemple avec `react-window` :
 
 ```jsx
 import { FixedSizeList as List } from 'react-window';
@@ -1556,7 +1556,7 @@ function MaListe() {
 
 1. **Balises sémantiques** :
   - Utiliser `<button>`, `<nav>`, `<main>`, etc. au lieu de `<div>`.
-2. **Attributs `aria-***` :
+2. **Attributs `aria-*`** :
   - Utiliser `aria-label`, `aria-hidden`, etc. pour améliorer l’accessibilité.
 3. **Focus** :
   - S’assurer que tous les éléments interactifs sont **accessibles via le clavier**.
@@ -1567,7 +1567,7 @@ function MaListe() {
 
 ### **📌 Sécurité**
 
-1. **Éviter `dangerouslySetInnerHTML**` :
+1. **Éviter `dangerouslySetInnerHTML`** :
   - ❌ **À éviter** (risque de XSS) :
   - ✅ **Préférer** :
     ```jsx
@@ -1587,12 +1587,12 @@ function MaListe() {
 ### **❓ 1. Quelle est la différence entre `state` et `props` ?**
 
 
-| `**state**`                                        | `**props**`                                           |
+| `state`                                        | `props`                                           |
 | -------------------------------------------------- | ----------------------------------------------------- |
 | **Données internes** au composant.                 | **Données passées par le parent**.                    |
 | **Modifiable** (via `setState` ou `useState`).     | **Immuable** (ne peut pas être modifié par l’enfant). |
 | Initialisé dans le composant.                      | Initialisé par le parent.                             |
-| Exemple : `const [count, setCount] = useState(0);` | Exemple : `<Enfant nom="Aurélie" />`                  |
+| Exemple : `const [count, setCount] = useState(0);` | Exemple : `<Enfant nom="Bobby" />`                  |
 
 
 **Réponse** :
@@ -1604,7 +1604,7 @@ function MaListe() {
 ### **❓ 2. Pourquoi utiliser des clés (`key`) dans une liste ?**
 
 **Réponse** :
-*"Les **clés** (`key`) sont essentielles pour aider React à **identifier les éléments** dans une liste et à **optimiser les mises à jour**.
+"Les **clés** (`key`) sont essentielles pour aider React à **identifier les éléments** dans une liste et à **optimiser les mises à jour**.
 Quand une liste est re-rendue, React utilise les clés pour :
 
 1. **Identifier** quels éléments ont **changé**, ont été **ajoutés**, ou ont été **supprimés**.
@@ -1632,7 +1632,7 @@ Quand une liste est re-rendue, React utilise les clés pour :
 ### **❓ 3. Qu’est-ce que le Virtual DOM ?**
 
 **Réponse** :
-*"Le **Virtual DOM** est une **représentation légère du DOM réel** en mémoire. Voici comment il fonctionne :
+"Le **Virtual DOM** est une **représentation légère du DOM réel** en mémoire. Voici comment il fonctionne :
 
 1. **Création** : Quand un composant React est rendu, React crée un **Virtual DOM** correspondant.
 2. **Mise à jour** : Quand l’état ou les props changent, React **re-crée le Virtual DOM**.
@@ -1649,17 +1649,17 @@ Si on a un composant qui affiche une liste, et qu’un seul élément change, Re
 
 - Re-crée le Virtual DOM avec la nouvelle liste.
 - Compare avec l’ancien Virtual DOM.
-- Met à jour **uniquement l’élément modifié** dans le DOM réel (au lieu de re-rendre toute la liste)."*
+- Met à jour **uniquement l’élément modifié** dans le DOM réel (au lieu de re-rendre toute la liste)."
 
 ---
 
 ### **❓ 4. Quelle est la différence entre `useState` et `useReducer` ?**
 
 
-| `**useState**`                                         | `**useReducer**`                                                         |
+| `useState`                                         | `useReducer`                                                         |
 | ------------------------------------------------------ | ------------------------------------------------------------------------ |
 | Pour un **état simple** (ex : un compteur).            | Pour un **état complexe** (ex : un panier avec plusieurs actions).       |
-| Retourne **une valeur + une fonction de mise à jour**. | Retourne **un état + une fonction `dispatch**`.                          |
+| Retourne **une valeur + une fonction de mise à jour**. | Retourne **un état + une fonction `dispatch`**.                          |
 | Mise à jour **directe** (`setCount(count + 1)`).       | Mise à jour via **actions** (`dispatch({ type: 'increment' })`).         |
 | Exemple : `const [count, setCount] = useState(0);`     | Exemple : `const [state, dispatch] = useReducer(reducer, initialState);` |
 
@@ -1674,21 +1674,21 @@ Si on a un composant qui affiche une liste, et qu’un seul élément change, Re
 ### **❓ 5. Comment optimiser les performances d’une application React ?**
 
 **Réponse** :
-*"Pour optimiser les performances d’une application React, je suis plusieurs bonnes pratiques :
+"Pour optimiser les performances d’une application React, je suis plusieurs bonnes pratiques :
 
-1. `**React.memo**` : Évite le re-rendu d’un composant si ses props n’ont pas changé.
+1. `React.memo` : Évite le re-rendu d’un composant si ses props n’ont pas changé.
   ```jsx
    const MonComposant = React.memo(function MonComposant({ nom }) {
      return <p>Bonjour, {nom} !</p>;
    });
   ```
-2. `**useCallback**` : Mémorise une fonction pour éviter sa recréation à chaque rendu.
+2. `useCallback` : Mémorise une fonction pour éviter sa recréation à chaque rendu.
   ```jsx
    const handleClick = useCallback(() => {
      console.log("Cliqué !");
    }, []); // Pas de dépendances → fonction mémorisée
   ```
-3. `**useMemo**` : Mémorise une valeur calculée.
+3. `useMemo` : Mémorise une valeur calculée.
   ```jsx
    const result = useMemo(() => {
      return computeExpensiveValue(a, b);
@@ -1703,14 +1703,14 @@ Si on a un composant qui affiche une liste, et qu’un seul élément change, Re
   - Utiliser des **clés uniques** dans les listes.
   - Éviter les **fonctions inline** dans les props (utiliser `useCallback`).
 6. **Virtualization** : Pour les longues listes, utiliser des librairies comme `react-window` pour ne rendre que les éléments visibles.
-7. **Éviter les calculs coûteux dans le rendu** : Les déplacer dans `useMemo` ou `useEffect`."*
+7. **Éviter les calculs coûteux dans le rendu** : Les déplacer dans `useMemo` ou `useEffect`."
 
 ---
 
 ### **❓ 6. Qu’est-ce que le contexte (`Context`) en React et quand l’utiliser ?**
 
 **Réponse** :
-*"Le **contexte** (`Context`) est un mécanisme de React qui permet de **partager des données entre plusieurs composants** sans avoir à passer manuellement des props à chaque niveau (prop drilling).
+"Le **contexte** (`Context`) est un mécanisme de React qui permet de **partager des données entre plusieurs composants** sans avoir à passer manuellement des props à chaque niveau (prop drilling).
 **Cas d’usage** :
 
 - **Thème** (light/dark mode).
@@ -1749,18 +1749,18 @@ function Toolbar() {
 
 - Pour un **état qui change souvent** (le contexte peut causer des re-rendus inutiles).
 - Pour un **état local** (utiliser `useState` à la place).
-- Pour un **état complexe** (utiliser Redux ou Zustand à la place)."*
+- Pour un **état complexe** (utiliser Redux ou Zustand à la place)."
 
 ---
 
 ### **❓ 7. Comment gérer les formulaires en React ?**
 
 **Réponse** :
-*"Il existe deux approches principales pour gérer les formulaires en React :
+"Il existe deux approches principales pour gérer les formulaires en React :
 
 1. **Formulaires contrôlés** :
   - L’état du formulaire est **géré par React**.
-  - Chaque champ est lié à une **prop `value**` et un **écouteur `onChange**`.
+  - Chaque champ est lié à une **prop `value`** et un **écouteur `onChange`**.
   - **Avantages** : Plus de contrôle, validation facile, état toujours à jour.
   - **Exemple** :
     ```jsx
@@ -1810,14 +1810,14 @@ function Toolbar() {
 
 - [Formik](https://formik.org/) : Pour les formulaires complexes.
 - [React Hook Form](https://react-hook-form.com/) : Performant et simple.
-- [Zod](https://github.com/colinhacks/zod) : Pour la validation des schémas (avec TypeScript)."*
+- [Zod](https://github.com/colinhacks/zod) : Pour la validation des schémas (avec TypeScript)."
 
 ---
 
 ### **❓ 8. Qu’est-ce que le prop drilling et comment l’éviter ?**
 
 **Réponse** :
-*"Le **prop drilling** est une situation où on doit **passer des props à travers plusieurs niveaux de composants** pour atteindre un composant enfant qui en a besoin.
+"Le **prop drilling** est une situation où on doit **passer des props à travers plusieurs niveaux de composants** pour atteindre un composant enfant qui en a besoin.
 **Exemple** :
 
 ```jsx
@@ -1852,7 +1852,7 @@ function Enfant({ theme }) {
 ### **❓ 9. Comment fonctionne `useEffect` et quand l’utiliser ?**
 
 **Réponse** :
-*"`useEffect` est un hook qui permet d’effectuer des **effets de bord** (side effects) dans un composant fonctionnel. Un effet de bord est une opération qui **interagit avec l’extérieur** du composant (ex : appel API, abonnement à un événement, manipulation du DOM).
+"`useEffect` est un hook qui permet d’effectuer des **effets de bord** (side effects) dans un composant fonctionnel. Un effet de bord est une opération qui **interagit avec l’extérieur** du composant (ex : appel API, abonnement à un événement, manipulation du DOM).
 **Syntaxe** :
 
 ```jsx
@@ -1906,14 +1906,14 @@ useEffect(() => {
 **Quand ne pas utiliser `useEffect` ?** :
 
 - Pour des **calculs dérivés** (utiliser `useMemo` à la place).
-- Pour des **mises à jour synchrones** de l’état (utiliser `useState` directement)."*
+- Pour des **mises à jour synchrones** de l’état (utiliser `useState` directement)."
 
 ---
 
 ### **❓ 10. Qu’est-ce que les hooks et pourquoi sont-ils importants ?**
 
 **Réponse** :
-*"Les **hooks** sont des fonctions qui permettent d’utiliser des **fonctionnalités de React** (état, effets de bord, etc.) dans des **composants fonctionnels**. Avant les hooks (introduits dans React 16.8), ces fonctionnalités étaient réservées aux **composants de classe**.
+"Les **hooks** sont des fonctions qui permettent d’utiliser des **fonctionnalités de React** (état, effets de bord, etc.) dans des **composants fonctionnels**. Avant les hooks (introduits dans React 16.8), ces fonctionnalités étaient réservées aux **composants de classe**.
 **Pourquoi les hooks sont-ils importants ?** :
 
 1. **Simplicité** : Les composants fonctionnels deviennent **aussi puissants** que les composants de classe, mais avec **moins de code**.
@@ -1934,9 +1934,9 @@ useEffect(() => {
 - `useReducer` : Gérer un état complexe.
 - `useRef` : Accéder à un élément DOM ou stocker une valeur mutable.
 - `useMemo` : Mémoriser une valeur calculée.
-- `useCallback` : Mémoriser une fonction."*
+- `useCallback` : Mémoriser une fonction."
 
----
+
 
 ---
 
