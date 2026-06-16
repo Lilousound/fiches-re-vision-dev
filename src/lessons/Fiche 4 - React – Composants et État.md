@@ -746,7 +746,7 @@ function Enfant({ onClick }) {
 
   // Utilisation
   function MonComposant() {
-    const [nom, setNom] = useLocalStorage("nom", "Aurélie");
+    const [nom, setNom] = useLocalStorage("nom", "Jean");
     return <input value={nom} onChange={(e) => setNom(e.target.value)} />;
   }
   ```

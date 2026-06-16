@@ -185,15 +185,15 @@ tsc --init  # Crée un fichier tsconfig.json
 
 ---
 
-### **📌 `void` et `undefined**`
+### **📌 `void` et `undefined`**
 
-- `**void**` : Fonction qui **ne retourne rien**.
+- `void` : Fonction qui **ne retourne rien**.
   ```typescript
   function direBonjour(): void {
     console.log("Bonjour !");
   }
   ```
-- `**undefined**` : Variable non initialisée ou fonction qui ne retourne rien.
+- `undefined` : Variable non initialisée ou fonction qui ne retourne rien.
   ```typescript
   let x: undefined;
   function f(): undefined {
@@ -224,8 +224,8 @@ tsc --init  # Crée un fichier tsconfig.json
 
   const utilisateur: Utilisateur = {
     id: 1,
-    nom: "Aurélie",
-    nom: "Aurélie",
+    nom: "Steven",
+    nom: "Steven",
     estActif: true,
     competences: ["HTML", "CSS", "JavaScript"],
   };
@@ -238,8 +238,8 @@ tsc --init  # Crée un fichier tsconfig.json
 
   const admin: Admin = {
     id: 1,
-    nom: "Aurélie",
-    nom: "Aurélie",
+    nom: "Bobby",
+    nom: "Bobby",
     estActif: true,
     competences: ["HTML", "CSS", "JavaScript"],
     role: "superadmin",
@@ -253,8 +253,8 @@ tsc --init  # Crée un fichier tsconfig.json
   }
 
   const personne: Personne = {
-    nom: "Aurélie",
-    nom: "Aurélie",
+    nom: "Toto",
+    nom: "Toto",
     direBonjour() {
       return `Bonjour, je m'appelle ${this.nom}`;
     },
@@ -313,8 +313,8 @@ class Etudiant implements Personne {
   }
 }
 
-const etudiant = new Etudiant("Aurélie", 25, "Sorbonne");
-const etudiant = new Etudiant("Aurélie", 25, "Sorbonne");
+
+const etudiant = new Etudiant("Stéphane", 25, "Sorbonne");
 console.log(etudiant.direBonjour());
 ```
 
@@ -346,10 +346,9 @@ class Personne {
   }
 }
 
-const aurélie = new Personne("Aurélie", 25);
-const aurélie = new Personne("Aurélie", 25);
-const aurélie = new Personne("Aurélie", 25);
-console.log(aurélie.direBonjour());
+const laura = new Personne("Laura", 28);
+
+console.log(laura.direBonjour());
 ```
 
 ---
@@ -382,7 +381,7 @@ class Personne {
   }
 }
 
-const personne = new Personne("Aurélie", 25);
+const personne = new Personne("Gaston", 43);
 console.log(personne.nom); // OK
 console.log(personne.age); // ❌ Erreur : 'age' est privé
 ```
@@ -405,7 +404,7 @@ class Etudiant extends Personne {
   }
 }
 
-const etudiant = new Etudiant("Aurélie", 25, "Sorbonne");
+const etudiant = new Etudiant("Leslie", 22, "Sorbonne");
 console.log(etudiant.direBonjour());
 ```
 
@@ -511,9 +510,9 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
 
-const personne = { nom: "Aurélie", age: 25 };
-const nom = getProperty(personne, "nom"); // "Aurélie"
-const age = getProperty(personne, "age"); // 25
+const personne = { nom: "Paul", age: 29 };
+const nom = getProperty(personne, "nom"); // "Paul"
+const age = getProperty(personne, "age"); // 29
 ```
 
 ---
@@ -556,8 +555,8 @@ const age = getProperty(personne, "age"); // 25
 
   type PersonneEmploye = Personne & Employe;
 
-  const aurélie: PersonneEmploye = {
-    nom: "Aurélie",
+  const Lara: PersonneEmploye = {
+    nom: "Lara",
     id: 123,
   };
   ```
@@ -673,7 +672,7 @@ function Utilisateur({ nom, age, enfants, onClick }: Props) {
 }
 
 // Utilisation
-<Utilisateur nom="Aurélie" age={25} onClick={() => console.log("Cliqué !")}>
+<Utilisateur nom="Cécile" age={25} onClick={() => console.log("Cliqué !")}>
   <p>Contenu enfant</p>
 </Utilisateur>
 ```
@@ -682,18 +681,18 @@ function Utilisateur({ nom, age, enfants, onClick }: Props) {
 
 ### **📌 Typage des Hooks**
 
-1. `**useState**` :
+1. `useState` :
   ```typescript
    const [count, setCount] = useState<number>(0);
    const [utilisateur, setUtilisateur] = useState<Utilisateur | null>(null);
   ```
-2. `**useEffect**` :
+2. `useEffect` :
   ```typescript
    useEffect(() => {
      // Code
    }, []); // Pas de typage spécifique nécessaire
   ```
-3. `**useReducer**` :
+3. `useReducer` :
   ```typescript
    interface State {
      count: number;
@@ -755,7 +754,7 @@ function MonComposant() {
 
 ---
 
-### **📌 `Partial<T>`
+### 📌 `Partial<T>`
 
 - **Définition** : Rend **toutes les propriétés de `T` optionnelles**.
 - **Exemple** :
@@ -774,12 +773,12 @@ function MonComposant() {
   //   age?: number;
   // };
 
-  const utilisateur: UtilisateurPartiel = { nom: "Aurélie" }; // OK
+  const utilisateur: UtilisateurPartiel = { nom: "Pascal" }; // OK
   ```
 
 ---
 
-### **📌 `Readonly<T>`
+### 📌 `Readonly<T>`
 
 - **Définition** : Rend **toutes les propriétés de `T` en lecture seule**.
 - **Exemple** :
@@ -791,13 +790,13 @@ function MonComposant() {
 
   type UtilisateurReadonly = Readonly<Utilisateur>;
 
-  const utilisateur: UtilisateurReadonly = { nom: "Aurélie", age: 25 };
+  const utilisateur: UtilisateurReadonly = { nom: "Tituan", age: 31 };
   utilisateur.nom = "Jean"; // ❌ Erreur : Cannot assign to 'nom' because it is a read-only property
   ```
 
 ---
 
-### **📌 `Pick<T, K>`
+### 📌 `Pick<T, K>`
 
 - **Définition** : Sélectionne **certaines propriétés** de `T`.
 - **Exemple** :
@@ -811,12 +810,12 @@ function MonComposant() {
   type UtilisateurNom = Pick<Utilisateur, "nom">;
   // Équivalent à : { nom: string }
 
-  const utilisateur: UtilisateurNom = { nom: "Aurélie" }; // OK
+  const utilisateur: UtilisateurNom = { nom: "Seb" }; // OK
   ```
 
 ---
 
-### **📌 `Omit<T, K>`
+### 📌 `Omit<T, K>`
 
 - **Définition** : Exclut **certaines propriétés** de `T`.
 - **Exemple** :
@@ -830,12 +829,12 @@ function MonComposant() {
   type UtilisateurSansAge = Omit<Utilisateur, "age">;
   // Équivalent à : { id: number; nom: string }
 
-  const utilisateur: UtilisateurSansAge = { id: 1, nom: "Aurélie" }; // OK
+  const utilisateur: UtilisateurSansAge = { id: 1, nom: "Karina" }; // OK
   ```
 
 ---
 
-### **📌 `Record<K, T>`
+### 📌 `Record<K, T>`
 
 - **Définition** : Crée un type **objet** avec des clés de type `K` et des valeurs de type `T`.
 - **Exemple** :
@@ -843,14 +842,14 @@ function MonComposant() {
   type Utilisateurs = Record<string, { nom: string; age: number }>;
 
   const utilisateurs: Utilisateurs = {
-    "1": { nom: "Aurélie", age: 25 },
+    "1": { nom: "Steph", age: 25 },
     "2": { nom: "Jean", age: 30 },
   };
   ```
 
 ---
 
-### **📌 `ReturnType<T>`
+### 📌 `ReturnType<T>`
 
 - **Définition** : Extrait le **type de retour** d’une fonction `T`.
 - **Exemple** :
@@ -930,7 +929,7 @@ console.log(MathUtils.soustraction(5, 2)); // 3
 | **Modules**                                | **Namespaces**                           |
 | ------------------------------------------ | ---------------------------------------- |
 | **Fichiers séparés**.                      | **Dans un seul fichier**.                |
-| `**import`/`export**`.                     | `**namespace**`.                         |
+| `import`/`export`.                     | `namespace`.                         |
 | **Recommandés** pour les nouveaux projets. | **Legacy** (moins utilisés aujourd’hui). |
 
 
@@ -1101,11 +1100,11 @@ class Personne {
   }
 }
 
-const personne = new Personne("Aurélie");
-// Affiche : "Modification de la propriété nom avec la valeur : Aurélie"
+const personne = new Personne("Bob");
+// Affiche : "Modification de la propriété nom avec la valeur : Bob"
 console.log(personne.nom);
 // Affiche : "Accès à la propriété nom"
-// Affiche : "Aurélie"
+// Affiche : "Bob"
 ```
 
 ---
@@ -1156,7 +1155,7 @@ console.log(personne.nom);
 ### **❓ 1. Quelle est la différence entre `interface` et `type` ?**
 
 
-| `**interface**`                           | `**type**`                                      |
+| `interface`                           | `type`                                      |
 | ----------------------------------------- | ----------------------------------------------- |
 | Extensible avec `extends`.                | Extensible avec `&` (intersection).             |
 | **Fusionnable** (déclaration multiple).   | Pas de fusion.                                  |
@@ -1248,11 +1247,11 @@ Ici, `Boite` est une classe **générique** qui peut stocker n’importe quel ty
 ### **❓ 3. Comment typer un tableau de plusieurs types ?**
 
 **Réponse** :
-*"Pour typer un tableau qui peut contenir **plusieurs types**, on utilise une **union de types** avec l’opérateur `|`.
+"Pour typer un tableau qui peut contenir **plusieurs types**, on utilise une **union de types** avec l’opérateur `|`.
 **Exemple** :
 
 ```typescript
-const tableau: (string | number)[] = ["Aurélie", 25, "Paris", 100];
+const tableau: (string | number)[] = ["Steve", 25, "Paris", 100];
 ```
 
 Ici, `tableau` peut contenir des **strings** ou des **numbers**.
@@ -1261,26 +1260,26 @@ Ici, `tableau` peut contenir des **strings** ou des **numbers**.
 
 1. **Tuple** (si l’ordre et le nombre d’éléments sont fixes) :
   ```typescript
-   const tuple: [string, number] = ["Aurélie", 25];
+   const tuple: [string, number] = ["Steve", 25];
   ```
    Ici, le premier élément doit être un `string` et le deuxième un `number`.
 2. **Type personnalisé** (pour plus de lisibilité) :
   ```typescript
    type StringOrNumber = string | number;
-   const tableau: StringOrNumber[] = ["Aurélie", 25];
+   const tableau: StringOrNumber[] = ["Steve", 25];
   ```
 
 **Quand utiliser quoi ?** :
 
 - **Union (`|`)** : Quand le tableau peut contenir **n’importe quelle combinaison** des types.
-- **Tuple** : Quand le tableau a une **structure fixe** (ex : `[nom, age]`)."*
+- **Tuple** : Quand le tableau a une **structure fixe** (ex : `[nom, age]`)."
 
 ---
 
 ### **❓ 4. Qu’est-ce que le type `unknown` et en quoi est-il différent de `any` ?**
 
 
-| `**any**`                                          | `**unknown**`                                        |
+| `any`                                          | `unknown`                                        |
 | -------------------------------------------------- | ---------------------------------------------------- |
 | **Désactive la vérification de type**.             | **Force la vérification de type** avant utilisation. |
 | Peut être assigné à n’importe quel type.           | Doit être vérifié avec `typeof` ou `instanceof`.     |
@@ -1288,9 +1287,9 @@ Ici, `tableau` peut contenir des **strings** ou des **numbers**.
 
 
 **Réponse** :
-*"`any` et `unknown` sont tous deux des types qui représentent **n’importe quelle valeur**, mais ils ont des **comportements très différents** :
+"`any` et `unknown` sont tous deux des types qui représentent **n’importe quelle valeur**, mais ils ont des **comportements très différents** :
 
-- `**any**` :
+- `any` :
   - **Désactive toutes les vérifications de type**.
   - On peut faire **n’importe quoi** avec une variable de type `any` (appeler des méthodes, accéder à des propriétés, etc.) **sans erreur de compilation**.
   - **Exemple** :
@@ -1300,7 +1299,7 @@ Ici, `tableau` peut contenir des **strings** ou des **numbers**.
     variableAny.nonExistant; // OK (pas d'erreur)
     ```
   - **Problème** : On perd **tous les avantages de TypeScript** (sécurité, autocomplétion, etc.).
-- `**unknown**` :
+- `unknown` :
   - **Force à vérifier le type** avant de l’utiliser.
   - On **ne peut pas** faire d’opérations sur une variable de type `unknown` **sans vérification préalable**.
   - **Exemple** :
@@ -1327,7 +1326,7 @@ Ici, `tableau` peut contenir des **strings** ou des **numbers**.
 ### **❓ 5. Comment typer une fonction qui retourne une promesse ?**
 
 **Réponse** :
-*"Pour typer une fonction qui retourne une **promesse**, on utilise le type générique `Promise<T>`, où `T` est le type de la valeur **résolue** par la promesse.
+"Pour typer une fonction qui retourne une **promesse**, on utilise le type générique `Promise<T>`, où `T` est le type de la valeur **résolue** par la promesse.
 **Exemple** :
 
 ```typescript
@@ -1352,7 +1351,7 @@ Ici, `fetchUtilisateur` retourne une `Promise<Utilisateur>`, ce qui signifie que
      return response.json();
    }
   ```
-2. **Promesse avec `void**` (pour les fonctions qui ne retournent rien) :
+2. **Promesse avec `void`** (pour les fonctions qui ne retournent rien) :
   ```typescript
    async function envoyerDonnees(data: any): Promise<void> {
      await fetch('https://api.example.com/donnees', {
@@ -1365,14 +1364,14 @@ Ici, `fetchUtilisateur` retourne une `Promise<Utilisateur>`, ce qui signifie que
 **Pourquoi c’est important ?** :
 
 - Cela permet à TypeScript de **vérifier le type** de la valeur résolue.
-- Cela améliore la **sécurité** et la **lisibilité** du code asynchrone."*
+- Cela améliore la **sécurité** et la **lisibilité** du code asynchrone."
 
 ---
 
 ### **❓ 6. Qu’est-ce que le type `Partial<T>` et à quoi sert-il ?**
 
 **Réponse** :
-*"`Partial<T>` est un **type utilitaire** de TypeScript qui rend **toutes les propriétés de `T` optionnelles**.
+"`Partial<T>` est un **type utilitaire** de TypeScript qui rend **toutes les propriétés de `T` optionnelles**.
 **Définition** :
 
 ```typescript
@@ -1398,7 +1397,7 @@ type UtilisateurPartiel = Partial<Utilisateur>;
 //   age?: number;
 // };
 
-const utilisateur: UtilisateurPartiel = { nom: "Aurélie" }; // OK
+const utilisateur: UtilisateurPartiel = { nom: "Bob" }; // OK
 ```
 
 **Cas d’usage** :
@@ -1416,14 +1415,14 @@ const utilisateur: UtilisateurPartiel = { nom: "Aurélie" }; // OK
 **Autres types utilitaires similaires** :
 
 - `Required<T>` : Rend toutes les propriétés de `T` **obligatoires**.
-- `Readonly<T>` : Rend toutes les propriétés de `T` **en lecture seule**."*
+- `Readonly<T>` : Rend toutes les propriétés de `T` **en lecture seule**."
 
 ---
 
 ### **❓ 7. Comment typer un composant React avec des enfants ?**
 
 **Réponse** :
-*"Pour typer un composant React qui accepte des **enfants**, on utilise le type `ReactNode` (ou `React.ReactNode`) pour la prop `children`.
+"Pour typer un composant React qui accepte des **enfants**, on utilise le type `ReactNode` (ou `React.ReactNode`) pour la prop `children`.
 **Exemple** :
 
 ```typescript
@@ -1480,16 +1479,16 @@ function Container({ children, titre }: Props) {
 **Bonnes pratiques** :
 
 - Toujours typer `children` avec `ReactNode` pour **maximiser la flexibilité**.
-- Si tu veux **restreindre** le type des enfants, utilise un type plus spécifique (ex : `React.ReactElement`)."*
+- Si tu veux **restreindre** le type des enfants, utilise un type plus spécifique (ex : `React.ReactElement`)."
 
 ---
 
 ### **❓ 8. Qu’est-ce que le type `Pick<T, K>` et `Omit<T, K>` ?**
 
 **Réponse** :
-*"`Pick<T, K>` et `Omit<T, K>` sont deux **types utilitaires** de TypeScript qui permettent de **sélectionner** ou **exclure** des propriétés d’un type.
+"`Pick<T, K>` et `Omit<T, K>` sont deux **types utilitaires** de TypeScript qui permettent de **sélectionner** ou **exclure** des propriétés d’un type.
 
-1. `**Pick<T, K>**` :
+1. `Pick<T, K>` :
   - **Définition** : Sélectionne **certaines propriétés** de `T`.
   - **Syntaxe** : `Pick<T, "prop1" | "prop2">`
   - **Exemple** :
@@ -1508,9 +1507,9 @@ function Container({ children, titre }: Props) {
     //   age: number;
     // };
 
-    const utilisateur: UtilisateurNomAge = { nom: "Aurélie", age: 25 }; // OK
+    const utilisateur: UtilisateurNomAge = { nom: "Toto", age: 25 }; // OK
     ```
-2. `**Omit<T, K>**` :
+2. `Omit<T, K>` :
   - **Définition** : Exclut **certaines propriétés** de `T`.
   - **Syntaxe** : `Omit<T, "prop1" | "prop2">`
   - **Exemple** :
@@ -1523,21 +1522,21 @@ function Container({ children, titre }: Props) {
     //   age: number;
     // };
 
-    const utilisateur: UtilisateurSansEmail = { id: 1, nom: "Aurélie", age: 25 }; // OK
+    const utilisateur: UtilisateurSansEmail = { id: 1, nom: "Leslie", age: 32 }; // OK
     ```
 
 **Cas d’usage** :
 
-- `**Pick**` : Quand on veut **extraire un sous-ensemble** des propriétés d’un type (ex : pour un formulaire qui ne nécessite que certains champs).
-- `**Omit**` : Quand on veut **exclure certaines propriétés** (ex : pour éviter d’envoyer des données sensibles à une API)."*
+- `Pick` : Quand on veut **extraire un sous-ensemble** des propriétés d’un type (ex : pour un formulaire qui ne nécessite que certains champs).
+- `Omit` : Quand on veut **exclure certaines propriétés** (ex : pour éviter d’envoyer des données sensibles à une API)."
 
 ---
 
 ### **❓ 9. Comment typer une API avec TypeScript ?**
 
 **Réponse** :
-*"Pour typer une API avec TypeScript, on peut utiliser des **interfaces** ou des **types** pour décrire la structure des **requêtes** et des **réponses**.
-**Exemple avec `fetch**` :
+"Pour typer une API avec TypeScript, on peut utiliser des **interfaces** ou des **types** pour décrire la structure des **requêtes** et des **réponses**.
+**Exemple avec `fetch`** :
 
 1. **Définir les types pour la réponse** :
   ```typescript
@@ -1552,7 +1551,7 @@ function Container({ children, titre }: Props) {
      status: number;
    }
   ```
-2. **Typer la fonction `fetch**` :
+2. **Typer la fonction `fetch`** :
   ```typescript
    async function fetchUtilisateurs(): Promise<ReponseUtilisateurs> {
      const response = await fetch('https://api.example.com/utilisateurs');
@@ -1601,14 +1600,14 @@ function Container({ children, titre }: Props) {
 - Toujours **typer les réponses des APIs** pour éviter les erreurs à l’exécution.
 - Utiliser des **interfaces** pour décrire la structure des données.
 - Gérer les **erreurs** avec `try/catch` et typer les erreurs si possible.
-- Pour les APIs complexes, utiliser des **librairies** comme [Zod](https://github.com/colinhacks/zod) pour valider les réponses."*
+- Pour les APIs complexes, utiliser des **librairies** comme [Zod](https://github.com/colinhacks/zod) pour valider les réponses."
 
 ---
 
 ### **❓ 10. Comment migrer un projet JavaScript vers TypeScript ?**
 
 **Réponse** :
-*"Migrer un projet JavaScript vers TypeScript peut sembler intimidant, mais en suivant une **approche progressive**, c’est tout à fait gérable. Voici les étapes que je recommande :
+"Migrer un projet JavaScript vers TypeScript peut sembler intimidant, mais en suivant une **approche progressive**, c’est tout à fait gérable. Voici les étapes que je recommande :
 
 1. **Installer TypeScript** :
   ```bash
@@ -1631,7 +1630,7 @@ function Container({ children, titre }: Props) {
       "include": ["src/**/*"]
     }
     ```
-3. **Renommer les fichiers `.js` en `.tsx` (pour les composants React) ou `.ts**` :
+3. **Renommer les fichiers `.js` en `.tsx` (pour les composants React) ou `.ts`** :
   - Commencer par **un ou deux fichiers** pour tester.
   - Exemple : `App.js` → `App.tsx`.
 4. **Ajouter des types progressivement** :
@@ -1672,8 +1671,8 @@ function Container({ children, titre }: Props) {
 
 **Outils utiles** :
 
-- `**tsc --noEmit**` : Vérifie les erreurs de type sans générer de fichiers.
-- `**ts-migrate**` (par Airbnb) : Outil pour migrer automatiquement une partie du code.
+- `tsc --noEmit` : Vérifie les erreurs de type sans générer de fichiers.
+- `ts-migrate` (par Airbnb) : Outil pour migrer automatiquement une partie du code.
 - **VS Code** : Excellente intégration avec TypeScript (autocomplétion, suggestions, etc.).
 
 **Bonnes pratiques** :
@@ -1681,7 +1680,7 @@ function Container({ children, titre }: Props) {
 - **Ne pas tout migrer en une fois** : Faire une migration **progressive**.
 - **Prioriser les fichiers critiques** : Commencer par les composants principaux et les fonctions utilitaires.
 - **Documenter les types** : Ajouter des commentaires pour expliquer les types complexes.
-- **Former l’équipe** : S’assurer que tout le monde comprend les bases de TypeScript."*
+- **Former l’équipe** : S’assurer que tout le monde comprend les bases de TypeScript."
 
 ---
 

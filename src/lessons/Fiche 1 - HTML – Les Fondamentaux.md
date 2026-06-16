@@ -549,7 +549,7 @@ function direBonjour(nom) {
   | ------------- | ------------------------------------------------- | -------------------------------------------------------------------------------- |
   | `type`        | Type de champ.                                    | `text`, `password`, `email`, `number`, `date`, `file`, `checkbox`, `radio`, etc. |
   | `name`        | Nom du champ (utilisé pour l’envoi).              | `<input name="nom">`                                                             |
-  | `value`       | Valeur par défaut.                                | `<input value="Aurélie">`                                                        |
+  | `value`       | Valeur par défaut.                                | `<input value="Toto">`                                                        |
   | `placeholder` | Texte d’exemple.                                  | `<input placeholder="Votre nom">`                                                |
   | `required`    | Champ obligatoire.                                | `<input required>`                                                               |
   | `disabled`    | Désactive le champ.                               | `<input disabled>`                                                               |
@@ -1038,7 +1038,7 @@ Cela mettra à jour le DOM, et le navigateur mettra à jour l’affichage en con
 *"La différence entre `GET` et `POST` concerne la façon dont les données du formulaire sont envoyées au serveur :
 
 - `**GET**` :
-  - Les données sont **ajoutées à l’URL** sous forme de paramètres (ex : `?nom=Aurélie&age=25`).
+  - Les données sont **ajoutées à l’URL** sous forme de paramètres (ex : `?nom=Robert&age=25`).
   - **Visible dans l’URL** → Pas sécurisé pour les données sensibles (ex : mots de passe).
   - **Limité en taille** (environ 2048 caractères selon les navigateurs).
   - Utilisé pour des **requêtes idempotentes** (ex : recherche, filtrage).
