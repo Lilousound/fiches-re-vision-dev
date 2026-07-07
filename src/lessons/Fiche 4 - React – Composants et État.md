@@ -852,6 +852,7 @@ class MonComposant extends React.Component {
 
 - **Formulaires contrôlés** :
   - L’état du formulaire est géré par **React**.
+  - e.preventDefault() est indispensable dans un onSubmit pour empêcher le rechargement de page par défaut du navigateur.
   - **Exemple** :
     ```jsx
     function Formulaire() {

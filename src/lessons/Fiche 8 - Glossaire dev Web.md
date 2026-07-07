@@ -26,7 +26,7 @@ Les 4 grands piliers de la méthode Agile (Manifeste Agile, 2001) :
   - *La collaboration avec le client* plutôt que négociation contractuelle
   - *L’adaptation au changement* plutôt que suivi d’un plan
 
-<br>
+
 
 
 

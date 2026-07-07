@@ -192,7 +192,7 @@
 - **Hook** : Fonction qui permet d’utiliser des fonctionnalités de React (état, effets, etc.) dans des composants fonctionnels.
 - `useState` : Gère un état local dans un composant (`const [state, setState] = useState(initialValue);`).
 - `useEffect` : Gère les effets de bord (appels API, abonnements, etc.) (`useEffect(() => {}, [dependencies]);`).
-- `useContext` : Accède à un contexte React (`const value = useContext(MyContext);`).
+- `useContext` : Accède à un contexte React (thème, préférence de langue, utilisateur actuellement authentifié...) (`const value = useContext(MyContext);`).
 - `useReducer` : Alternative à `useState` pour gérer un état complexe (`const [state, dispatch] = useReducer(reducer, initialState);`).
 - `useRef` : Stocke une valeur mutable qui ne déclenche pas de re-rendu (`const ref = useRef(initialValue);`).
 - `useMemo` : Mémorise une valeur calculée (`const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);`).
